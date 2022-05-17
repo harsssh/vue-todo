@@ -40,6 +40,7 @@ const deleteItem = (index: number) => {
 table {
   width: 100%;
   border-collapse: collapse;
+  table-layout: fixed;
 
   tr {
     border-bottom: solid 1px #ccc;
@@ -48,6 +49,8 @@ table {
   th,
   td {
     padding: 12px 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 
   th.header-name {
