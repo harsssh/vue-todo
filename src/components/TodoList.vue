@@ -1,7 +1,7 @@
 <template>
   <div>
     <h2>Todo List</h2>
-    <div>
+    <div class="todo-form">
       <input
         v-model="newItem.name"
         class="todo-name"
@@ -41,6 +41,12 @@ const addItem = () => {
 </script>
 
 <style lang="scss" scoped>
+.todo-form {
+  white-space: nowrap;
+  width: 80%;
+  margin: 0 auto;
+}
+
 .todo-name,
 .todo-deadline,
 .add-button {
@@ -51,6 +57,15 @@ const addItem = () => {
   &:not(:last-child) {
     margin-right: 3px;
   }
+}
+
+.todo-name {
+  width: 50%;
+}
+
+.todo-deadline {
+  width: 30%;
+  cursor: pointer;
 }
 
 .add-button {
@@ -64,10 +79,6 @@ const addItem = () => {
   &:hover {
     background-color: #eee;
   }
-}
-
-.todo-deadline {
-  cursor: pointer;
 }
 
 .todo-table {

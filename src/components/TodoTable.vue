@@ -11,7 +11,7 @@
 
       <tbody>
         <tr v-for="(item, index) in items" :key="item.name">
-          <td>{{ item.name }}</td>
+          <td class="todo-name">{{ item.name }}</td>
           <td>{{ item.deadline }}</td>
           <td>
             <button class="delete-button" @click="deleteItem(index)">
@@ -49,8 +49,12 @@ table {
   th,
   td {
     padding: 12px 0;
-    overflow: hidden;
-    text-overflow: ellipsis;
+
+    &.todo-name {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
   }
 
   th.header-name {
