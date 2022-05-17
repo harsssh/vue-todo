@@ -16,9 +16,16 @@
   </div>
 </template>
 
+<script lang="ts">
+export interface Todo {
+  name: string
+  deadline: string
+}
+</script>
+
 <script lang="ts" setup>
 import { reactive } from 'vue'
-import TodoTable, { Todo } from './TodoTable.vue'
+import TodoTable from './TodoTable.vue'
 
 const newItem = reactive<Todo>({ name: '', deadline: '' })
 const items = reactive<Todo[]>([])

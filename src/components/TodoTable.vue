@@ -24,15 +24,9 @@
   </div>
 </template>
 
-<script lang="ts">
-export interface Todo {
-  name: string
-  deadline: string
-}
-</script>
-
 <script lang="ts" setup>
 import { defineProps } from 'vue'
+import { Todo } from './TodoList.vue'
 
 const { items } = defineProps<{ items: Todo[] }>()
 
