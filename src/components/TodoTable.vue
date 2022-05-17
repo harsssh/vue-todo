@@ -10,11 +10,13 @@
       </thead>
 
       <tbody>
-        <tr v-for="item in items" :key="item.name">
+        <tr v-for="(item, index) in items" :key="item.name">
           <td>{{ item.name }}</td>
           <td>{{ item.deadline }}</td>
           <td>
-            <button class="delete-button">Delete</button>
+            <button class="delete-button" @click="deleteItem(index)">
+              Delete
+            </button>
           </td>
         </tr>
       </tbody>
@@ -32,7 +34,9 @@ export interface Todo {
 <script lang="ts" setup>
 import { defineProps } from 'vue'
 
-defineProps<{ items: Todo[] }>()
+const { items } = defineProps<{ items: Todo[] }>()
+
+const deleteItem = (index: number) => items.splice(index, 1)
 </script>
 
 <style lang="scss" scoped>

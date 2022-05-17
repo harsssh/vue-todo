@@ -21,7 +21,7 @@ import { reactive } from 'vue'
 import TodoTable, { Todo } from './TodoTable.vue'
 
 const newItem = reactive<Todo>({ name: '', deadline: '' })
-const items = reactive<Todo[]>([{ name: 'sample', deadline: '2022-05-18' }])
+const items = reactive<Todo[]>([])
 
 const addItem = () => {
   if (newItem.name != '' && newItem.deadline != '') {
