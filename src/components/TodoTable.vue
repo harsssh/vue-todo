@@ -64,11 +64,9 @@ table {
     border: none;
     border-radius: 6px;
     font-weight: bold;
-
-    background-color: $button-color;
     color: #eee;
+    background-color: $button-color;
     transition: background-color 0.2s;
-
     cursor: pointer;
 
     &:hover {
