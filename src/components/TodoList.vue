@@ -26,14 +26,16 @@ export interface Todo {
 <script lang="ts" setup>
 import { reactive } from 'vue'
 import TodoTable from './TodoTable.vue'
+import { saveItems, loadItems } from '@/utils/storage'
 
 const newItem = reactive<Todo>({ name: '', deadline: '' })
-const items = reactive<Todo[]>([])
+const items = reactive<Todo[]>(loadItems())
 
 const addItem = () => {
   if (newItem.name != '' && newItem.deadline != '') {
     items.push({ name: newItem.name, deadline: newItem.deadline })
     newItem.name = ''
+    saveItems(items)
   }
 }
 </script>

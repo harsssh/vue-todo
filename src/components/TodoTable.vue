@@ -25,12 +25,15 @@
 </template>
 
 <script lang="ts" setup>
-import { defineProps } from 'vue'
 import { Todo } from './TodoList.vue'
+import { saveItems } from '@/utils/storage'
 
 const { items } = defineProps<{ items: Todo[] }>()
 
-const deleteItem = (index: number) => items.splice(index, 1)
+const deleteItem = (index: number) => {
+  items.splice(index, 1)
+  saveItems(items)
+}
 </script>
 
 <style lang="scss" scoped>
