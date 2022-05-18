@@ -44,6 +44,7 @@ const addItem = () => {
 .todo-form {
   white-space: nowrap;
   width: 80%;
+  max-width: 600px;
   margin: 0 auto;
 }
 
@@ -53,10 +54,6 @@ const addItem = () => {
   box-sizing: border-box;
   height: 30px;
   vertical-align: middle;
-
-  &:not(:last-child) {
-    margin-right: 3px;
-  }
 }
 
 .todo-name {
